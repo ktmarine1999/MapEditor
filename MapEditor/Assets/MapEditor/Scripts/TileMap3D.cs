@@ -1,8 +1,20 @@
-﻿using UnityEngine;
+﻿/*
+ * Bassed on Dean Lunz (aka Created by: X) 2D Tilemap Starter Kit 
+ * found at http://wiki.unity3d.com/index.php/2D_Tilemap_Starter_Kit
+ * 
+ * Modified for 3D tile creation
+ * it uses a vector3 for the size of the map but don't think i am going to use the height
+ * 
+*/
+
+using UnityEngine;
 using System.Collections;
 
 namespace MapEditor
 {
+	/// <summary>
+	/// Provides a component for tile mapping.
+	/// </summary>
 	public class TileMap3D : MonoBehaviour
 	{
 		/// <summary>
@@ -23,16 +35,6 @@ namespace MapEditor
 		public Vector3
 			MarkerPosition;
 
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="TileMap3D"/> class.
-		/// </summary>
-//		public TileMap3D ()
-//		{
-//			if (!mapSize || mapSize == Vector3.zero)
-//				mapSize = new Vector3 (20, 1, 10);
-//		}//TileMap3D()
-
 		/// <summary>
 		/// When the game object is selected this will draw the grid
 		/// </summary>
@@ -48,7 +50,7 @@ namespace MapEditor
 			Gizmos.DrawWireCube(position + size / 2, size);
 
 			// draw tile cells
-			Gizmos.color = Color.grey;
+			Gizmos.color = Color.yellow;
 			for(int x = 1; x < mapSize.x; x++)
 			{
 				for(int y = 1; y < mapSize.y; y++)
